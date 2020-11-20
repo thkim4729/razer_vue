@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+    <div class="home">
+        <div class="home-content">
+            <core-app-bar class="core-app-bar"></core-app-bar>
+            <core-view class="core-view"></core-view>
+            <core-footer class="core-footer"></core-footer>
+        </div>
+    </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
-  }
+    name: 'Home',
+    components: {
+        CoreAppBar: () => import('@/components/core/AppBar.vue'),
+        CoreView: () => import('@/components/core/View.vue'),
+        CoreFooter: () => import('@/components/core/Footer.vue'),
+    },
 };
 </script>
+<style lang="scss" scoped>
+.home {
+    background: #111;
+}
+</style>
